@@ -1,0 +1,24 @@
+@use "sass:math";
+@use "colors" as colors;
+
+// Para usar estas funciones lo haces de forma normal sin include
+@function convertPxToRem($pixel){
+    @if math.is-unitless($pixel){
+        @return math.div($pixel, 16) + rem;
+    }@else{
+        @error 'Don \'t use units when using the convertPxToRem() function; only numbers.'
+    }
+};
+
+@function convertPxToEm($pixel){
+    @if math.is-unitless($pixel){
+        @return math.div($pixel, 16) + em;
+    }@else{
+        @error 'Don \'t use units when using the convertPxToEm() function; only numbers.'
+    }
+};
+
+@function getColor($mode, $color, $value){
+    @return map-get(map-get(map-get(colors.$colors, $mode), $color), $value)
+    // @return map-get(map-get(colors.$colors, $type), $value);
+}

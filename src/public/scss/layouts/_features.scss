@@ -1,0 +1,42 @@
+@use "../abstracts" as abstracts;
+
+.grid-features{
+  &__wrapper{
+    min-height: 100vh;
+    padding: 4rem 0;
+    @include abstracts.breakpoints-up(large){
+      padding: 6rem 0;
+    }
+  }
+  &__intro-section{
+    margin-bottom: 2rem;
+  }
+  &__cards{
+    padding: 2rem  0 0rem;
+    display: grid;
+    //!Cuando tu aplicas minmax, se caga todo, xq estarías usando pixeles o rem y eso perjudica después al agregar gaps a las columnas y filas, asi que usa solo fr en los columns
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+    //!El problemas de los gaps cuanod aplicas px en los columns es que no lo considera dentro del tamaño de cada uno de las cajas, asi que el ancho total sería el tamaño de la caja mas el tamaño de los gap horizontal o sea desbordaría el 100%
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 1.5em;
+    /* grid-gap: 1.25rem ; */
+
+    @include abstracts.breakpoints-up(medium){
+      grid-column-gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include abstracts.breakpoints-up(large){
+      grid-column-gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+@use "../abstracts" as abstracts;
+//Visibility
+.hide-for-mobile{
+  //hide fot tablet and mobile
+  @include abstracts.breakpoints-down(medium){
+    display: none !important;
+  }
+}
+.hide-for-desktop{
+  //hide for desktop viewport width
+  @include abstracts.breakpoints-up(large){
+    display: none !important;
+  }
+}

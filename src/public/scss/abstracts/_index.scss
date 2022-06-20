@@ -1,0 +1,5 @@
+//!Tu cuando haces el forward aquí en el index estas importando el contenido de cada archivo y en cada archivo manejas las importaciones de los otros archivos.
+@forward 'colors';
+@forward 'functions';
+@forward 'breakpoints';
+@forward 'mixins';

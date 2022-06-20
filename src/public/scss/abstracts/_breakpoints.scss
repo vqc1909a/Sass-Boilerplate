@@ -1,0 +1,19 @@
+@use "functions" as f;
+
+//!0-640px => celulares
+//!640px-1024px => tablets
+//!1024-más => compus
+
+// Para usar estas tuplas lo haces de forma normal sin include
+// $: El signo de dolar representa una variable o una tupla
+$breakpoints-up: (
+    medium: f.convertPxToEm(640), /* 40em */
+    large: f.convertPxToEm(1024), /* 64em */
+    xlarge: f.convertPxToEm(1400) /* 87.5em */
+);
+
+$breakpoints-down: (
+    small: f.convertPxToEm(639.98), /* 39.99875em */
+    medium: f.convertPxToEm(1023.98), /* 63.99875em */
+    large: f.convertPxToEm(1399.98) /* 87.49875em */
+);

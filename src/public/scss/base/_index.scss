@@ -1,0 +1,6 @@
+//Esta carpeta es denominado base o también global, como querais, y el archivo de reseteo es denominado como reset.scss o globals.scss, también podría uamentar un arhcivo más como base.scss que serían tus propios estilos base que se presenteran en todo tu proyecto, aunque no lo veo necesario.
+
+@forward 'root';
+@forward 'reset';
+@forward 'base';
+@forward 'typography';

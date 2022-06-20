@@ -1,0 +1,44 @@
+
+//!Tanto como el font weight, el line-height, color y el letter-spacing pueden variar para diferentes ocasiones, en este caso el line-height, letter-spacing y el font weight es sacado de material ui, esos tres propiedaes pueden variar a tu conveniencia.
+h1{
+    font-weight: 300;
+    font-size: var(--h1-font-size);
+    // line-height: var(--heading-line-height);
+    line-height: 1.167;
+    letter-spacing: -0.01562em;
+}
+h2{
+    font-weight: 300;
+    font-size: var(--h2-font-size);
+    // line-height: var(--heading-line-height);
+    letter-spacing: -0.00833em;
+    line-height: 1.2;
+}
+h3{
+    font-weight: 400;
+    font-size: var(--h3-font-size);
+    // line-height: var(--heading-line-height);
+    letter-spacing: 0em;
+    line-height: 1.167;
+}
+h4{
+    font-weight: 400;
+    font-size: var(--h4-font-size);
+    // line-height: var(--heading-line-height);
+    letter-spacing: 0.00735em;
+    line-height: 1.235;
+}
+h5{
+  font-weight: 400;
+  font-size: var(--h5-font-size);
+  // line-height: var(--heading-line-height);
+  letter-spacing: 0em;
+  line-height: 1.334;
+}
+h6{
+  font-weight: 500;
+  font-size: var(--h6-font-size);
+  // line-height: var(--heading-line-height);
+  letter-spacing: 0.0075em;
+  line-height: 1.6;
+}

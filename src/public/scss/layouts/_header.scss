@@ -1,0 +1,39 @@
+@use "../abstracts" as abstracts;
+
+.grid-header{
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: var(--zIndex-appBar);
+  &__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 10vh;
+  }
+  &__logo{
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__main-nav{
+    flex: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__hamburguer{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &__cta{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+}

@@ -1,0 +1,145 @@
+@use "../abstracts" as abstracts;
+
+:root, [data-theme="light"] {
+    --main-primary-color: #{abstracts.getColor(light, primary, main)};
+    --light-primary-color: #{abstracts.getColor(light, primary, light)};
+    --dark-primary-color: #{abstracts.getColor(light, primary, dark)};
+
+    --main-secondary-color: #{abstracts.getColor(light, secondary, main)};
+    --light-secondary-color: #{abstracts.getColor(light, secondary, light)};
+    --dark-secondary-color: #{abstracts.getColor(light, secondary, dark)};
+
+    --main-ternary-color: #{abstracts.getColor(light, ternary, main)};
+    --light-ternary-color: #{abstracts.getColor(light, ternary, light)};
+    --dark-ternary-color: #{abstracts.getColor(light, ternary, dark)};
+
+    --main-error-color: #{abstracts.getColor(light, error, main)};
+    --light-error-color: #{abstracts.getColor(light, error, light)};
+    --dark-error-color: #{abstracts.getColor(light, error, dark)};
+
+    --main-warning-color: #{abstracts.getColor(light, warning, main)};
+    --light-warning-color: #{abstracts.getColor(light, warning, light)};
+    --dark-warning-color: #{abstracts.getColor(light, warning, dark)};
+
+    --main-info-color: #{abstracts.getColor(light, info, main)};
+    --light-info-color: #{abstracts.getColor(light, info, light)};
+    --dark-info-color: #{abstracts.getColor(light, info, dark)};
+
+    --main-success-color: #{abstracts.getColor(light, success, main)};
+    --light-success-color: #{abstracts.getColor(light, success, light)};
+    --dark-success-color: #{abstracts.getColor(light, success, dark)};
+
+    --0-common-color: #{abstracts.getColor(light, common, 0)};
+    --100-common-color: #{abstracts.getColor(light, common, 100)};
+    --200-common-color: #{abstracts.getColor(light, common, 200)};
+    --300-common-color: #{abstracts.getColor(light, common, 300)};
+    --400-common-color: #{abstracts.getColor(light, common, 400)};
+
+    --contrast-text-color: #{abstracts.getColor(light, text, contrast)};
+    --primary-text-color: #{abstracts.getColor(light, text, primary)};
+    --secondary-text-color: #{abstracts.getColor(light, text, secondary)};
+    --disabled-text-color: #{abstracts.getColor(light, text, disabled)};
+};
+
+//!Los valores de aqui son para ammbos casos tanto del dark como del light, pero siempre debes de poner en tu html en el tag de body data-theme="cualquierweba" para que me agarre este data theme xq sino pones nada no te agarrara nada
+[data-theme]{
+    --50-grey-color: #{abstracts.getColor(neutral, grey, 50)};
+    --100-grey-color: #{abstracts.getColor(neutral, grey, 100)};
+    --200-grey-color: #{abstracts.getColor(neutral, grey, 200)};
+    --300-grey-color: #{abstracts.getColor(neutral, grey, 300)};
+    --400-grey-color: #{abstracts.getColor(neutral, grey, 400)};
+    --500-grey-color: #{abstracts.getColor(neutral, grey, 500)};
+    --600-grey-color: #{abstracts.getColor(neutral, grey, 600)};
+    --700-grey-color: #{abstracts.getColor(neutral, grey, 700)};
+    --800-grey-color: #{abstracts.getColor(neutral, grey, 800)};
+    --900-grey-color: #{abstracts.getColor(neutral, grey, 900)};
+    --A100-grey-color: #{abstracts.getColor(neutral, grey, A100)};
+    --A200-grey-color: #{abstracts.getColor(neutral, grey, A200)};
+    --A400-grey-color: #{abstracts.getColor(neutral, grey, A400)};
+    --A400-grey-color: #{abstracts.getColor(neutral, grey, A700)};
+
+    //!FUENTES
+    --heading-font: 'Roboto', sans-serif;
+    --body-font: 'Public Sans', sans-serif;
+    //!zIndex
+    --zIndex-mobileStepper: 1000;
+    --zIndex-fab: 1050;
+    --zIndex-speedDial: 1050;
+    --zIndex-appBar: 1100;
+    --zIndex-drawer: 1200;
+    --zIndex-modal: 1300;
+    --zIndex-snackbar: 1400;
+    --zIndex-tooltip: 1500;
+
+    //!ESTOS TAMAÑOS NO SON FIJOS, SE PRESETARAN TAGS QUE REQUIERES TMAÑOS DE FUENTES ESPECIFICOS, ASI QUE NORML PARA ELLOS SI ESOS CASOS SON PARTICULARES Y NO ESTÁN PRESENTES EN TANTAS PARTES, PONLE ESE TAMAÑO, DE IGUAL FORMA HABRA CASOS PARTICULARES PARA EL TAMAÑO DE LINE HEIGHT DE LOS HEADERS Y DEL BODY
+    --bigger-font-size: #{abstracts.convertPxToRem(42)}; /* 2.625rem */
+    --big-font-size: #{abstracts.convertPxToRem(36)}; /* 2.25rem */
+    --h1-font-size: #{abstracts.convertPxToRem(34)}; /* 2.125rem */
+    --h2-font-size: #{abstracts.convertPxToRem(32)}; /* 2rem */
+    --h3-font-size: #{abstracts.convertPxToRem(22)}; /* 1.375rem */
+    --h4-font-size: #{abstracts.convertPxToRem(20)}; /* 1.25rem */
+    --h5-font-size: #{abstracts.convertPxToRem(19)}; /* 1.1875rem */
+    --h6-font-size: #{abstracts.convertPxToRem(17)}; /* 1.0625rem */
+
+    --normal-font-size: #{abstracts.convertPxToRem(15)}; /* 1rem */
+    --small-font-size: #{abstracts.convertPxToRem(14)}; /* 0.875rem */
+    --smaller-font-size: #{abstracts.convertPxToRem(13)}; /* 0.8rem */
+    --bgi-smaller-font-size: #{abstracts.convertPxToRem(11)}; /* 0.8rem */
+    // --heading-line-height: 1.45;
+    --body-line-height: 1.8;
+     @include abstracts.breakpoints-up(large) {
+        --bigger-font-size: #{abstracts.convertPxToRem(56)}; /* 3.75rem */
+        --big-font-size: #{abstracts.convertPxToRem(40)}; /* 2.5rem */
+        --h1-font-size: #{abstracts.convertPxToRem(38)}; /* 2.375rem */
+        --h2-font-size: #{abstracts.convertPxToRem(36)}; /* 2.25rem */
+        --h3-font-size: #{abstracts.convertPxToRem(26)}; /* 1.625rem */
+        --h4-font-size: #{abstracts.convertPxToRem(22)}; /* 1.375rem */
+        --h5-font-size: #{abstracts.convertPxToRem(20)}; /* 1.25rem */
+        --h6-font-size: #{abstracts.convertPxToRem(18)}; /* 1.125rem */
+        --normal-font-size: #{abstracts.convertPxToRem(16)}; /* 1rem */
+        --small-font-size: #{abstracts.convertPxToRem(15)}; /* 0.9375rem */
+        --smaller-font-size: #{abstracts.convertPxToRem(14)}; /* 0.875rem */
+        --big-smaller-font-size: #{abstracts.convertPxToRem(12)}; /* 0.75rem */
+    }
+};
+
+[data-theme="dark"] {
+    --main-primary-color: #{abstracts.getColor(dark, primary, main)};
+    --light-primary-color: #{abstracts.getColor(dark, primary, light)};
+    --dark-primary-color: #{abstracts.getColor(dark, primary, dark)};
+
+    --main-secondary-color: #{abstracts.getColor(dark, secondary, main)};
+    --light-secondary-color: #{abstracts.getColor(dark, secondary, light)};
+    --dark-secondary-color: #{abstracts.getColor(dark, secondary, dark)};
+
+    --main-ternary-color: #{abstracts.getColor(dark, ternary, main)};
+    --light-ternary-color: #{abstracts.getColor(dark, ternary, light)};
+    --dark-ternary-color: #{abstracts.getColor(dark, ternary, dark)};
+
+    --main-error-color: #{abstracts.getColor(dark, error, main)};
+    --light-error-color: #{abstracts.getColor(dark, error, light)};
+    --dark-error-color: #{abstracts.getColor(dark, error, dark)};
+
+    --main-warning-color: #{abstracts.getColor(dark, warning, main)};
+    --light-warning-color: #{abstracts.getColor(dark, warning, light)};
+    --dark-warning-color: #{abstracts.getColor(dark, warning, dark)};
+
+    --main-info-color: #{abstracts.getColor(dark, info, main)};
+    --light-info-color: #{abstracts.getColor(dark, info, light)};
+    --dark-info-color: #{abstracts.getColor(dark, info, dark)};
+
+    --main-success-color: #{abstracts.getColor(dark, success, main)};
+    --light-success-color: #{abstracts.getColor(dark, success, light)};
+    --dark-success-color: #{abstracts.getColor(dark, success, dark)};
+
+    --0-common-color: #{abstracts.getColor(dark, common, 0)};
+    --100-common-color: #{abstracts.getColor(dark, common, 100)};
+    --200-common-color: #{abstracts.getColor(dark, common, 200)};
+    --300-common-color: #{abstracts.getColor(dark, common, 300)};
+    --400-common-color: #{abstracts.getColor(dark, common, 400)};
+
+    --contrast-text-color: #{abstracts.getColor(dark, text, contrast)};
+    --primary-text-color: #{abstracts.getColor(dark, text, primary)};
+    --secondary-text-color: #{abstracts.getColor(dark, text, secondary)};
+    --disabled-text-color: #{abstracts.getColor(dark, text, disabled)};
+};

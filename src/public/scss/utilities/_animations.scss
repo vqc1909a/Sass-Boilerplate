@@ -1,0 +1,64 @@
+@use "../abstracts" as abstracts;
+
+.appear-content{
+  opacity: 0;
+  transform: translateY(50px);
+  transition: .6s all ease-out;
+}
+.intro-appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.move-from-above{
+  transform: translateY(0);
+}
+.fade-in{
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+@keyframes fade-in {
+  from {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes translate-right-in {
+  from {
+    transform: translateX(-150%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes translate-right-out {
+  from {
+    transform: translateX(-150%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

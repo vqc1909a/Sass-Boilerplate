@@ -1,0 +1,103 @@
+@use "../utilities" as utilities;
+
+html{
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+/*! Box sizing rules */
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+/*! Remove default margin */
+body,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+//!Por el momento no hay h5 y h6 xq hasta h4 es el heading donde comunmente se llega y solo reestablecemo el margin superior
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+  margin-top: 0;
+}
+
+
+//! Set core root defaults: Las actualizaciones recientes han dado como resultado que se actualice para aplicar solo un desplazamiento suave cuando hay :focus-within del elemento html.
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+//!Es útil que <body> llene la ventana gráfica, incluso cuando está vacía, así que lo hago configurando la altura mínima en 100vh. Configuré la altura de línea en 1,5 porque el valor predeterminado 1,2 no es lo suficientemente grande como para tener texto accesible y legible. También configuré la representación de texto para optimizar la velocidad.
+body{
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  padding: 0;
+  overflow-x: hidden;
+  //! Ponemos 400 como font weight, no olvides de traerlo esto de google fonts sino no dará y su tu pones por jeemplo el valor de 300, lo tomara como el valor por defecto que es  400 o sea el regular o también lo tomará el font weight pero ya del sistema y no de la fuente
+  font-weight: 400;
+}
+
+//!Solo restablezco el estilo de lista donde un elemento de lista tiene un atributo role=["list"]. Esto ayuda con algunos problemas de accesibilidad
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+//!Para los enlaces sin un atributo de clase, configuro text-decoration-skip-ink: auto para que el subrayado se muestre de una manera mucho más legible. Basicamente esto es para que el subrayado de un enlace no sobretape las letras de un texto como la p ó g, etc
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+//!Configuré las imágenes para que fueran un elemento de bloque porque, francamente, la vida es demasiado corta para ese extraño espacio que queda en la parte inferior y, de manera realista, las imágenes, especialmente con el trabajo que hago, tienden a comportarse como bloques.
+img {
+  max-width: 100%;
+  display: block;
+  //!Con el display block, la propiedad de vertical align es ignorado, o sea que no debería ser usado
+  // vertical-align: top;
+}
+
+//!set as default is font: inherit on input elements, which as a shorthand, does exactly what it says on the tin. No more tiny (mono, in some cases) text! (El valor predeterminado en font: inherit en los elementos de entrada, que como abreviatura, hace exactamente lo que dice en la lata. ¡No más texto pequeño (mono, en algunos casos)!)
+//!Aqui básicamente lo que hace es heredar todas las propiedades de fuente que algunas veces se escapa de la manos y no hereda correctamente, entonces las propiedades que heredan son las siguientes: font-family, line-height, font-weight, font-stretch, font-variant y font-size
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+//!LPor último, y no menos importante, hay una única consulta @media que restablece las animaciones, las transiciones y el comportamiento de desplazamiento si el usuario prefiere un movimiento reducido. Me gusta esto en el reinicio, con especificidad por encima de los selectores importantes, porque lo más probable es que ahora, si un usuario no quiere movimiento, no lo obtendrá, independientemente del CSS que siga a este reinicio.
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+  display: inline-block;
+}
+
+button{
+  display: block;
+  border: none;
+  background: none;
+  outline: none;
+}

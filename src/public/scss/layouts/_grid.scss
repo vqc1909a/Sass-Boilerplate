@@ -1,0 +1,26 @@
+@use "../abstracts" as abstracts;
+
+
+//!Aqui iria el flujo de cajas de los layouts en general y todo el grid de un layout específico iría en su propio arhcivo, no te olvide que aqui solo van las propiedades que afectan el flujo de caja nada mas como display , float , position , left , top , height , width. Pero en los archivos de layouts propios irían las propiedades en orden box => border => background , text , other.
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: abstracts.convertPxToRem(40); /* 2.5rem */
+
+    @include abstracts.breakpoints-up(large){
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto;
+    }
+    &__main, &__sidebar{
+        padding: abstracts.convertPxToRem(40) /* 2.5rem */;
+    }
+    &__main{
+        background-color: hsl(240, 99%, 33%);
+    }
+    &__sidebar{
+        background-color: hsl(300, 100%, 30%);
+    }
+
+}

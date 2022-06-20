@@ -1,0 +1,14 @@
+@use "breakpoints" as b;
+
+// Para usar los mixins en cualquier parte lo haces con include
+@mixin breakpoints-up($size){
+    @media (min-width: map-get(b.$breakpoints-up, $size)){
+        @content
+    }
+};
+
+@mixin breakpoints-down($size){
+    @media (max-width: map-get(b.$breakpoints-down, $size)){
+        @content
+    }
+};

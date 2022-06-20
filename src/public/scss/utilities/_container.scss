@@ -1,0 +1,18 @@
+@use "../abstracts" as abstracts;
+
+//!El container ideal es 1200 perp para que vayas desarrollando puede ser de 1100px pero luego lo cambias a 1200
+%width {
+  width: min(100% - abstracts.convertPxToRem(40) /* 2.5rem */, abstracts.convertPxToRem(1200) /* 1200px */)
+};
+
+.container{
+    @extend %width;
+    margin-inline: auto;
+}
+.container-left{
+  width: 100%;
+  @include abstracts.breakpoints-up(large){
+    width: min(100% - abstracts.convertPxToRem(20), 50vw + abstracts.convertPxToRem(600));
+    margin-inline-start: auto;
+  }
+}
